@@ -10,6 +10,17 @@ private:
 
 
 public:
+      ~A(){
+        delete [] arr;
+     }
+    A(int a_,int b_,const char *arr_):
+        a(a_),
+        b(b_)
+        {
+             size = strlen(arr_);
+            arr = new char[size+1];
+            strcpy(arr, arr_);
+        }
 
 
      A(const A& a1){
@@ -27,17 +38,7 @@ public:
             strcpy(arr, a1.arr);
     }
 
-     ~A(){
-        delete [] arr;
-     }
-    A(int a_,int b_,const char *arr_):
-        a(a_),
-        b(b_)
-        {
-             size = strlen(arr_);
-            arr = new char[size+1];
-            strcpy(arr, arr_);
-        }
+
 
         void printf(){
             cout<<a<<endl;
